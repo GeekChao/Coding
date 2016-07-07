@@ -31,9 +31,9 @@ class Palindrome{
         }
 
         for(int i = 0; i < str.length(); i++){
-            //prefix += str.charAt(i); //Warning: the function parmeter
+            //prefix += str.charAt(i); //Wrong: use the next state as a current one.
             String substr = str.substring(0, i) + str.substring(i + 1);
-            permutation(substr, prefix + str.charAt(i));
+            permutation(substr, prefix + str.charAt(i));//pass next state
         }
     }
 
@@ -46,3 +46,10 @@ class Palindrome{
         test.listPalinPermutation("Tact Coa");
     }
 }
+
+/*
+* Conclusion: Do not need to generate all permutations in order to check if one is a Palindrome.
+* All we need to do is to take advantage of the Palindrome character to solve problem. 
+* Its property is that a string can have no more than one character that is odd. 
+* Lesson: Keep track of right state when recursive call.
+*/
