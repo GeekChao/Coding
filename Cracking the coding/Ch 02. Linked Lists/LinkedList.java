@@ -1,6 +1,6 @@
 /*
 * A Doubly Circular linkedlist
-* Author: Mingchao Zou Jul 10
+* Author: Mingchao Zou Jul 11
 */
 
 import java.io.*;
@@ -53,6 +53,10 @@ public class LinkedList{
 		tail = head;
 		length = 0;
     }
+
+	public Node getHead(){
+		return head;
+	}
 
     public boolean isEmpty(){
         return length == 0;
@@ -127,6 +131,7 @@ public class LinkedList{
 		System.out.println();
 	}
 
+/*
 	public static void main(String[] args){
 		LinkedList list = new LinkedList();
 		//insert 
@@ -145,5 +150,6 @@ public class LinkedList{
 		}
 		list.printList();		
 	}
+	*/
     
 }
