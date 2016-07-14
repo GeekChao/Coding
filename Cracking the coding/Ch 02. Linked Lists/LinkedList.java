@@ -58,6 +58,10 @@ public class LinkedList{
 		return head;
 	}
 
+	public Node getTail(){
+		return tail;
+	}
+
     public boolean isEmpty(){
         return length == 0;
     }
@@ -105,6 +109,21 @@ public class LinkedList{
 		
 		length++;
     }
+
+	public void deleteNode(Node node) throws Exception{
+		if(isEmpty())
+			throw new Exception("Empty List");
+
+		if(node == head)
+			throw new Exception("Can not delete head node");
+
+		node.getPrev().setNext(node.getNext());
+		node.getNext().setPrev(node.getPrev());
+		node.setNext(null);
+		node.setPrev(null);
+		
+		length--;
+	}
     
     public void deleteNode(Object data) throws Exception{
 		if(isEmpty())
