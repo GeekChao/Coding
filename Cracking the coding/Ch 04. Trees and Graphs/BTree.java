@@ -32,6 +32,10 @@ class BTreeNode<T>{
     public T getData(){
         return this.data;
     }
+    
+    public void setData(T data){
+        this.data = data;
+    }
 }
 
 class BTree<T>{    
