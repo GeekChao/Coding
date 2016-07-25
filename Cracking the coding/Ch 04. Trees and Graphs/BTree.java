@@ -5,12 +5,34 @@
 import java.io.*;
 
 class BTreeNode<T>{
-    T data;
-    BTreeNode<T> left;
-    BTreeNode<T> right;
+    private T data;
+    private BTreeNode<T> left;
+    private BTreeNode<T> right;
+    private int leftHeight;
+    private int rightHeight;
+
+    public BTreeNode(){
+        
+    }
 
     public BTreeNode(T data){
         this.data = data;
+    }
+
+    public void setLeftHeight(int height){
+        this.leftHeight = height;
+    }
+
+    public int getLeftHeight(){
+        return this.leftHeight;
+    }
+
+    public void setRightHeight(int height){
+        this.rightHeight = height;
+    }
+
+    public int getRightHeight(){
+        return this.rightHeight;
     }
 
     public void setLeftChild(BTreeNode<T> node){
@@ -41,6 +63,10 @@ class BTreeNode<T>{
 class BTree<T>{    
     private BTreeNode<T> root;
     private static boolean isExist = false;
+
+    public BTreeNode getRoot(){
+        return this.root;
+    }
 
     public void insert(T data){
         insert(root, data);
@@ -114,7 +140,7 @@ class BTree<T>{
         return root == null;
     }
 
-    public static void main(String[] args){
+/*    public static void main(String[] args){
         BTree<Integer> test = new BTree<Integer>();
         test.insert(1);
         test.insert(2);
@@ -128,7 +154,7 @@ class BTree<T>{
         System.out.println(test.find(14));
         System.out.println(test.find1(test.root ,4));
         System.out.println(test.find1(test.root, 14));
-    }
+    }*/
 }
 
 /*

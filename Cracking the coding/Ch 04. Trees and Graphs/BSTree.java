@@ -27,6 +27,10 @@ class BSTreeNode extends BTreeNode<Integer>{
 class BSTree extends BTree<Integer>{
     private BSTreeNode root;
 
+    public BSTreeNode getRoot(){
+        return this.root;
+    }
+
     public void insert(int data){
         insert(root, data);
     }
@@ -198,47 +202,47 @@ class BSTree extends BTree<Integer>{
         return node;
     }
 
-    public static void main(String[] args){
-        BSTree test = new BSTree();
-        test.insert(2);
-        test.insert(1);
-        test.insert(6);
-        test.insert(0);
-        test.insert(9);
-        test.insert(2);
-        test.insert(5);
-        test.inOrder(test.root);
-        try{
-            System.out.println(test.find(0));
-            System.out.println(test.find(110));
-            System.out.println(test.find(9));
-            System.out.println(test.find(11));
-            //One left Child     
-/*          test.insert(8);  
-            System.out.println("Remove: " + test.remove(8).getData());
-            test.inOrder(test.root);*/
+//     public static void main(String[] args){
+//         BSTree test = new BSTree();
+//         test.insert(2);
+//         test.insert(1);
+//         test.insert(6);
+//         test.insert(0);
+//         test.insert(9);
+//         test.insert(2);
+//         test.insert(5);
+//         test.inOrder(test.root);
+//         try{
+//             System.out.println(test.find(0));
+//             System.out.println(test.find(110));
+//             System.out.println(test.find(9));
+//             System.out.println(test.find(11));
+//             //One left Child     
+// /*          test.insert(8);  
+//             System.out.println("Remove: " + test.remove(8).getData());
+//             test.inOrder(test.root);*/
 
-            //One Right Child
-/*          test.insert(10);
-            System.out.println("Remove: " + test.remove(10).getData());
-            test.inOrder(test.root);*/
+//             //One Right Child
+// /*          test.insert(10);
+//             System.out.println("Remove: " + test.remove(10).getData());
+//             test.inOrder(test.root);*/
 
-            //No Child
-/*          System.out.println("Remove: " + test.remove(5).getData());
-            test.inOrder(test.root);*/
+//             //No Child
+// /*          System.out.println("Remove: " + test.remove(5).getData());
+//             test.inOrder(test.root);*/
 
-            //Two Child
-            System.out.println("Remove: " + test.remove(6).getData());
-            test.inOrder(test.root);
+//             //Two Child
+//             System.out.println("Remove: " + test.remove(6).getData());
+//             test.inOrder(test.root);
 
-            //reomve root
-            System.out.println("Remove: " + test.remove(2).getData());
+//             //reomve root
+//             System.out.println("Remove: " + test.remove(2).getData());
             
-        }catch(Exception exp){
-            System.out.println(exp);
-        }
+//         }catch(Exception exp){
+//             System.out.println(exp);
+//         }
 
         
-    }
+//     }
         
 }
