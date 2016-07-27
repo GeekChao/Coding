@@ -5,6 +5,7 @@
 
 class BSTreeNode extends BTreeNode<Integer>{
     private BSTreeNode parent;
+    private boolean isVisited;
 
     public BSTreeNode getParent(){
         return this.parent;
@@ -21,6 +22,14 @@ class BSTreeNode extends BTreeNode<Integer>{
     public BSTreeNode(int data, BSTreeNode parent){
         super(data);
         this.parent = parent;
+    }
+
+    public void setVisit(boolean isVisited){
+        this.isVisited = isVisited;
+    }
+
+    public boolean getVisit(){
+        return this.isVisited;
     }
 } 
 
