@@ -88,3 +88,7 @@ class Balance extends BTree<Integer>{
     3 
     Balance Binary Tree: false    
 */
+
+/*
+* Lesson: Separate the calculating heights part from the one checking balance.
+*/
