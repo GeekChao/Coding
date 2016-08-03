@@ -1,12 +1,12 @@
 /*
-* Bubble Sort
+* Selection Sort
 * Time / Space Complexity: O(n2) / O(1)
 * Author: Mingchao Zou, Aug 3
 */
 
 "use strict"
 
-function bubbleSort(arr, len) {
+function selectionSort(arr){
 
     function swap(i, j) {
         var temp = arr[i];
@@ -14,17 +14,18 @@ function bubbleSort(arr, len) {
         arr[j] = temp;
     }
 
-    var isSorted = true;
-    for(let j = len - 1; j > 0; j--){
-        if(isSorted && j < len - 1){
-            break;
+    for(let i = 0; i < arr.length - 1; i++){
+        var min = arr[i];
+        var k = i;
+        for(let j = i + 1; j < arr.length; j++){
+            if(arr[j] < min){ // find the minimum element
+                min = arr[j];
+                k = j;
+            }
         }
 
-        for(let i = 0; i < j; i++){
-            if(arr[i] > arr[i + 1]){
-                swap(i, i + 1);
-                isSorted = false;
-            }
+        if(k != i){
+            swap(i, k);
         }
     }
 }
@@ -37,7 +38,7 @@ function print(arr){
 
 var array = [2, 1, 8, 4, 5, 4, 0, 3];
 
-bubbleSort(array, array.length);
+selectionSort(array);
 
 print(array);
 
