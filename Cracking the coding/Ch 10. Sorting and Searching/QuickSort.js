@@ -1,6 +1,6 @@
 /*
-* Quick Sort with unique elements
-* Time / Space Complexity: O(NlogN) / O(1)
+* Quick Sort
+* Time / Space Complexity: O(NlogN) / O(logN)
 * Author: Mingchao Zou, Aug 4
 */
 
@@ -54,7 +54,7 @@ function print(arr){
     });
 }
 
-var array = [2, 1, 8, 9, 5, 4, 0, 3];
+var array = [2, 4, 8, 9, 5, 4, 0, 3];
 
 quickSort(array, 0, array.length - 1);
 
@@ -63,9 +63,9 @@ print(array);
 /*
 * Result:
     0
-    1
     2
     3
+    4
     4
     5
     8

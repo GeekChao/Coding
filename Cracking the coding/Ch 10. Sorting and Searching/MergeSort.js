@@ -1,6 +1,6 @@
 /*
 * Merge Sort
-* Time / Space Complexity: O(NlogN) / O(N)
+* Time / Space Complexity: O(NlogN) / O(logN)
 * Author: Mingchao Zou, Aug 3
 */
 "use strict"
