@@ -13,4 +13,6 @@ hs_err_pid*
 
 .DS_Store
 
-*.json
+launch.json
+
+Cracking the coding/node_modules/*
