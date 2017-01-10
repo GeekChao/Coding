@@ -10,24 +10,19 @@ function StairCase(stairs) {
 }
 
 StairCase.prototype.runUpRecur =  function (){
-    var count = 0;
 
     function runWays(n){
         if(n === 0) {
-            count++;
-            return;
+            return 1;
         }else if(n < 0){
-            return;
+            return 0;
         }
 
-        runWays(n - 1);
-        runWays(n - 2);
-        runWays(n - 3);
+        return runWays(n - 1) + runWays(n - 2) + runWays(n - 3);
     }
     
-    runWays(this.stairs);
+    return runWays(this.stairs);
 
-    return count;
 };
 
 StairCase.prototype.runUpMemo = function(){
