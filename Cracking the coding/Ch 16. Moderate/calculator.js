@@ -9,7 +9,7 @@ function calculate(equation){
     };
     let opStack = [], numStack = [];
 
-    function strToArr(str){
+    function strToArr(str){ //extract opprands and opperators from the equation string
         let arr = [];
         for(let i = 0; i < str.length; i++){
             let j = i;
@@ -48,7 +48,7 @@ function calculate(equation){
             if(opStack.length === 0 || precedence[opStack[opStack.length - 1]] < precedence[ch]){
                 opStack.push(ch);
             }else{
-                while(opStack.length !== 0 && precedence[opStack[opStack.length - 1]] >= precedence[ch]){
+                while(precedence[opStack[opStack.length - 1]] >= precedence[ch]){
                     let result = arithmetic(opStack.pop(), numStack.pop(), numStack.pop());
                     numStack.push(result);
                 }
@@ -59,7 +59,7 @@ function calculate(equation){
         }
     }
 
-    while(opStack.length !== 0){
+    while(opStack.length !== 0){ //finish calculating the remains
         let result = arithmetic(opStack.pop(), numStack.pop(), numStack.pop());
         numStack.push(result);
     }
