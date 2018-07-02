@@ -1,0 +1,22 @@
+{
+  "name": "Ch17",
+  "version": "",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist && babel src -d dist",
+    "test": "npm run build && jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
+  "dependencies": {
+    "jest": "^23.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^23.2.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
