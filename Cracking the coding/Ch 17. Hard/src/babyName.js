@@ -47,16 +47,16 @@ function babyName(names, synonyms){
     }
 
     function DFS(node){
-        let count = 0;
-        function search(node){
-            node.visited = true;
-            for(let neighbor of node.neighborhoods){
-                if(!neighbor.visited) search(neighbor);
-            }
-            count += freq.get(node.name) || 0;
+        if(node.visited) return 0;
+
+        node.visited = true;
+        let sum = freq.get(node.name) || 0;
+
+        for(let child of node.neighborhoods){
+            sum += DFS(child);
         }
-        search(node);
-        return count;
+
+        return sum;
     }
     
     for(let name in graph.nodes){

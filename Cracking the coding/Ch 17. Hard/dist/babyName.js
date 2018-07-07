@@ -119,38 +119,37 @@ function babyName(names, synonyms) {
     }
 
     function DFS(node) {
-        var count = 0;
-        function search(node) {
-            node.visited = true;
-            var _iteratorNormalCompletion3 = true;
-            var _didIteratorError3 = false;
-            var _iteratorError3 = undefined;
+        if (node.visited) return 0;
 
+        node.visited = true;
+        var sum = freq.get(node.name) || 0;
+
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = undefined;
+
+        try {
+            for (var _iterator3 = node.neighborhoods[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                var child = _step3.value;
+
+                sum += DFS(child);
+            }
+        } catch (err) {
+            _didIteratorError3 = true;
+            _iteratorError3 = err;
+        } finally {
             try {
-                for (var _iterator3 = node.neighborhoods[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-                    var neighbor = _step3.value;
-
-                    if (!neighbor.visited) search(neighbor);
+                if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                    _iterator3.return();
                 }
-            } catch (err) {
-                _didIteratorError3 = true;
-                _iteratorError3 = err;
             } finally {
-                try {
-                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                        _iterator3.return();
-                    }
-                } finally {
-                    if (_didIteratorError3) {
-                        throw _iteratorError3;
-                    }
+                if (_didIteratorError3) {
+                    throw _iteratorError3;
                 }
             }
-
-            count += freq.get(node.name) || 0;
         }
-        search(node);
-        return count;
+
+        return sum;
     }
 
     for (var name in graph.nodes) {
