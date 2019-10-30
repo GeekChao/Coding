@@ -1,4 +1,6 @@
-import DeckOfCards, {BlackJackCard, DescShuffle } from "../src/ex1"
+import { BlackJackCard } from "../Card"
+import { DescShuffle } from "../Shuffle"
+import DeckOfCards from "../"
 
 describe("Test ex1", () => {
     let deck = null
