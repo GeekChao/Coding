@@ -19,8 +19,8 @@ class RoleCallHandler extends CallHandler{
             if(availEmpolyees.length > 0){
                 const e = availEmpolyees[0]
                 e.setStatus(STATUS.BUSY)
-                busyEmpolyees.push(e)
-                availEmpolyees.splice(0, 1)
+                cc.addEmployeeToList(e, busyEmpolyees)
+                cc.removeEmployeeFromList(availEmpolyees)
 
                 return e
             }
