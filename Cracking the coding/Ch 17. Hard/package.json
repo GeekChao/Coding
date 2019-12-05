@@ -1,22 +1,34 @@
 {
-  "name": "Ch17",
-  "version": "",
-  "scripts": {
-    "clean": "rm -rf dist",
-    "build": "npm run clean && mkdir dist && babel src -d dist",
-    "test": "npm run build && jest"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    }
-  },
-  "dependencies": {
-    "jest": "^23.2.0"
+  "name": "node-typescript-boilerplate",
+  "version": "0.0.0",
+  "description": "Minimalistic boilerplate to quick-start Node.js development in TypeScript.",
+  "engines": {
+    "node": ">= 10.13 <11"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-jest": "^23.2.0",
-    "babel-preset-env": "^1.7.0"
+    "@types/jest": "^24.0.18",
+    "@types/node": "^10.14.17",
+    "jest": "~24.9.0",
+    "prettier": "~1.18.2",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.0.0",
+    "tslint": "~5.19.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-microsoft-contrib": "~6.2.0",
+    "tsutils": "~3.17.0",
+    "typescript": "~3.6.0"
+  },
+  "scripts": {
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "lint": "tslint -t stylish --project \"tsconfig.json\"",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "author": "Jakub Synowiec <github@jakubsynowiec.info>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "tslib": "~1.10.0"
   }
 }
