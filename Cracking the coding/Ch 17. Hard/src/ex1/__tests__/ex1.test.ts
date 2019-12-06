@@ -1,40 +1,20 @@
-import { BlackJackCard } from "../Card"
-import { DescShuffle } from "../Shuffle"
-import DeckOfCards from "../"
+import add from "../"
 
-describe("Test ex1", () => {
-    let deck = null
-
-    beforeEach(() => {
-        deck = new DeckOfCards([new BlackJackCard(9, "black", "jack"), new BlackJackCard(3, "black", "jack"), new BlackJackCard(6, "black", "jack")])
+describe("Add two integers without plus", () => {
+    it("when they have the same length of bit sequences", () => {
+        expect(add(4, 5)).toEqual(9)
     })
 
-    afterEach(() => {
-        deck = null
+    it("when they have the one length difference of bit sequences", () => {
+        expect(add(21, 33)).toEqual(54)
     })
 
-    it("initialize an instance of blackjack card", () => {
-        const card = new BlackJackCard(9, "black", "jack")
-
-        expect(card.number).toEqual(9)
-        expect(card.color).toEqual("black")
-        expect(card.shape).toEqual("jack")
+    it("when they have the more than on length differences of bit sequences", () => {
+        expect(add(21, 1233)).toEqual(1254)
     })
 
-    it("initialize an instance of deck", () => {
-        expect(deck.cards).toHaveLength(3)
-    })
-
-    it("shuffle the cards in the deck by number in random order default", () => {
-        deck.shuffle()
-
-        deck.cards.forEach(card => expect([9, 6, 3]).toContain(card.number))
-    })
-
-    it("shffle the cards in the deck by number in descending order", () => {
-        deck.setShuffle(new DescShuffle())
-        deck.shuffle()
-
-        expect(deck.cards.map(card => card.number)).toEqual([9, 6, 3])
+    it("when they have the more than on length differences of bit sequences", () => {
+        expect(add(63, 5)).toEqual(68)
     })
 })
+
