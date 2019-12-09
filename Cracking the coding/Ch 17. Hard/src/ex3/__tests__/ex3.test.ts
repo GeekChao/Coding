@@ -1,4 +1,4 @@
-import { generateRandomSet } from "../"
+import { generateRandomSet } from ".."
 
 describe("Random Set", () => {
     let arr = null
