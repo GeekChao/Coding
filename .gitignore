@@ -15,4 +15,4 @@ hs_err_pid*
 
 launch.json
 
-Cracking the coding/node_modules/*
+**/node_modules/*
