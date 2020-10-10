@@ -1,6 +1,9 @@
 """
 Problem: Given a string, find the length of the longest substring in it with no more than K distinct characters.
 
+Time Complexity: O(N)
+Space Complexity: O(K)
+
 Difficulty: Medium
 """
 
