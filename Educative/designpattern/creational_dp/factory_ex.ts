@@ -26,7 +26,7 @@ class ToyDuck {
 class ToyCar {
     color: string
     price: number
-    name?: string
+    name: string
 
     public constructor({ color, price, name } : Toy) {
         this.color = color
@@ -36,7 +36,7 @@ class ToyCar {
 }
 
 class ToyFactory {
-    createFactory(toyType: ToyType, toy: Toy) {
+    createToy(toyType: ToyType, toy: Toy) {
         if (toyType === ToyType.Car) return new ToyDuck(toy)
 
         if (toyType === ToyType.Duck) return new ToyCar(toy)
@@ -45,6 +45,6 @@ class ToyFactory {
 
 const toyFactory = new ToyFactory()
 
-const duck = toyFactory.createFactory(ToyType.Duck, { color: "blue", price : 12, name: "hsdf" })
+const duck = toyFactory.createToy(ToyType.Duck, { color: "blue", price : 12, name: "hsdf" })
 
 console.log(duck)
