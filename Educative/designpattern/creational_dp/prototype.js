@@ -14,10 +14,10 @@ var car = {
 
 //defining the extra property color with value red
 const car1 = Object.create(car,{color :{value: "red"}});
-console.log(car1.color)
+console.log(car1.color, car1.numofWheels, Object.getOwnPropertyNames(car1))
 
 //defining the extra property color with value red black
 const car2 = Object.create(car, {color : {value: "red black"}});
-console.log(car2.color)
+console.log(car2.color, car2.numofWheels)
 
 console.log(car1.__proto__ === car2.__proto__)
