@@ -1,3 +1,9 @@
+"""
+Design a class to calculate the median of a number stream.
+    insertNum(int num): stores the number in the class
+    findMedian(): returns the median of all numbers inserted in the class
+"""
+
 from heapq import *
 
 class MedianOfAStream:
